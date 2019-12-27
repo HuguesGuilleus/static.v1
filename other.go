@@ -23,6 +23,15 @@ var (
 	SleepProd time.Duration = 10 * time.Minute
 )
 
+// Sleep according to the mode.
+func sleep() {
+	if Dev {
+		time.Sleep(SleepDev)
+	} else {
+		time.Sleep(SleepProd)
+	}
+}
+
 // Panic if the error is not nil.
 func panicing(err error) {
 	if err != nil {

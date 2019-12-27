@@ -13,7 +13,6 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
-	"time"
 )
 
 // An regexp to identify Js file.
@@ -34,11 +33,7 @@ func Js(directory string) *JsServer {
 	go func() {
 		for {
 			serv.update(directory)
-			if Dev {
-				time.Sleep(SleepDev)
-			} else {
-				time.Sleep(SleepProd)
-			}
+			sleep()
 		}
 	}()
 	return serv

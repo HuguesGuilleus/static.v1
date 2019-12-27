@@ -13,7 +13,6 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
-	"time"
 )
 
 // An regexp to identify CSS file.
@@ -34,11 +33,7 @@ func Css(directory string) *CssServer {
 	go func() {
 		for {
 			serv.update(directory)
-			if Dev {
-				time.Sleep(SleepDev)
-			} else {
-				time.Sleep(SleepProd)
-			}
+			sleep()
 		}
 	}()
 	return serv
