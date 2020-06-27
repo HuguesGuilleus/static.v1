@@ -2,6 +2,8 @@
 
 [![GoDoc](https://godoc.org/github.com/HuguesGuilleus/static.v1?status.svg)](https://godoc.org/github.com/HuguesGuilleus/static.v1)
 
+[Use the new version](https://github.com/HuguesGuilleus/static.v2)
+
 Create easily a `http.Handler` for CSS anf Js files to a Web server.
 
 ## Installation
